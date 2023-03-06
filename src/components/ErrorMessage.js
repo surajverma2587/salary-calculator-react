@@ -1,3 +1,5 @@
+import Alert from "react-bootstrap/Alert";
+
 export const ErrorMessage = () => {
-  return <div>ErrorMessage</div>;
+  return <Alert variant="danger">Please complete the form</Alert>;
 };

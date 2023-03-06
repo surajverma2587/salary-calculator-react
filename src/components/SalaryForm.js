@@ -2,7 +2,11 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-export const SalaryForm = () => {
+export const SalaryForm = ({
+  handleFormError,
+  handleFormSuccess,
+  handleCalculation,
+}) => {
   const [taxYear, setTaxYear] = useState("2021-2022");
   const [grossSalary, setGrossSalary] = useState(30000);
 
@@ -10,10 +14,10 @@ export const SalaryForm = () => {
     event.preventDefault();
 
     if (grossSalary && grossSalary > 0) {
-      console.log(taxYear, grossSalary);
-      // handle calculations
+      handleFormSuccess();
+      handleCalculation(taxYear, grossSalary);
     } else {
-      // handle error
+      handleFormError();
     }
   };
 
@@ -28,7 +32,7 @@ export const SalaryForm = () => {
   };
 
   return (
-    <Form className="border p-3 rounded-3" onSubmit={handleSubmit}>
+    <Form className="border p-3 rounded-3 mb-3" onSubmit={handleSubmit}>
       <Form.Group className="mb-3">
         <Form.Label>Select Tax Year</Form.Label>
         <Form.Select onChange={handleChange} name="taxYear" value={taxYear}>

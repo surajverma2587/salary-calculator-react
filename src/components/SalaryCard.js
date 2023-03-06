@@ -14,13 +14,13 @@ export const SalaryCard = ({ salary }) => {
       <ListGroup.Item>
         <div className="d-flex justify-content-between">
           <div>Annual Salary</div>
-          <div>{annualIncome}</div>
+          <div>{annualIncome.toLocaleString()}</div>
         </div>
       </ListGroup.Item>
       <ListGroup.Item>
         <div className="d-flex justify-content-between">
           <div>Taxable Income</div>
-          <div>{taxableIncome}</div>
+          <div>{taxableIncome.toLocaleString()}</div>
         </div>
       </ListGroup.Item>
       <ListGroup.Item>
@@ -32,13 +32,13 @@ export const SalaryCard = ({ salary }) => {
       <ListGroup.Item>
         <div className="d-flex justify-content-between">
           <div>Tax Payable</div>
-          <div>{taxAmount}</div>
+          <div>{taxAmount.toLocaleString()}</div>
         </div>
       </ListGroup.Item>
       <ListGroup.Item className="p-0">
         <div className="d-flex justify-content-between fs-3 bg-light p-2">
           <div>Take Home Salary</div>
-          <div>{takeHomeSalary}</div>
+          <div>{takeHomeSalary.toLocaleString()}</div>
         </div>
       </ListGroup.Item>
     </ListGroup>
